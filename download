@@ -1,0 +1,6 @@
+data/
+output/
+report/*.html
+.Rhistory
+.RData
+.Rproj.user/

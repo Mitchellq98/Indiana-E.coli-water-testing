@@ -1,0 +1,12 @@
+MonitoringLocationIdentifier,OrganizationIdentifier,ActivityStartDate,ActivityTypeCode,ActivityMediaName,ResultMeasureValue,ResultMeasure.MeasureUnitCode,ResultDetectionConditionText,ResultStatusIdentifier,CharacteristicName
+TEST-SITE-1,TEST_ORG,2024-06-03,Sample-Routine,Water,120,cfu/100ml,,Accepted,Escherichia coli
+TEST-SITE-1,TEST_ORG,2024-06-10,Sample-Routine,Water,410,MPN/100 mL,,Accepted,Escherichia coli
+TEST-SITE-1,TEST_ORG,2024-06-10,Quality Control Sample-Field Replicate,Water,395,MPN/100 mL,,Accepted,Escherichia coli
+TEST-SITE-1,TEST_ORG,2024-06-17,Quality Control Sample-Field Blank,Water,0,MPN/100 mL,,Accepted,Escherichia coli
+TEST-SITE-2,TEST_ORG,2024-07-01,Sample-Routine,Water,,cfu/100ml,Not Detected,Accepted,Escherichia coli
+TEST-SITE-2,TEST_ORG,2024-07-08,Sample-Routine,Water,30000,MPN/100ml,,Accepted,Escherichia coli
+TEST-SITE-2,TEST_ORG,2024-07-15,Sample-Routine,Sediment,88,cfu/100ml,,Accepted,Escherichia coli
+TEST-SITE-2,TEST_ORG,2024-07-22,Sample-Routine,Water,75,mg/L,,Accepted,Escherichia coli
+TEST-SITE-3,TEST_ORG,2024-08-05,Sample-Routine,Water,200,#/100ml,,Rejected,Escherichia coli
+TEST-SITE-3,TEST_ORG,2024-08-12,Sample-Routine,Water,55,cfu/100ml,,Preliminary,Escherichia coli
+TEST-SITE-3,TEST_ORG,2024-08-12,Sample-Routine,Water,55,cfu/100ml,,Preliminary,Escherichia coli

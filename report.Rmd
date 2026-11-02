@@ -1,0 +1,55 @@
+---
+title: "E. coli in Indiana Waterways, 2015-2025"
+author: "Mitchell Qumsieh"
+date: "`r format(Sys.Date(), '%B %Y')`"
+output:
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(readr)
+library(dplyr)
+library(knitr)
+source("R/config.R")
+source("R/analyze.R")
+source("R/plots.R")
+
+clean  <- read_csv(CLEAN_PATH, show_col_types = FALSE)
+log    <- read_csv(CLEAN_LOG_PATH, show_col_types = FALSE)
+season <- recreation_season(clean, RECREATION_MONTHS)
+sites  <- site_exceedance(season, SINGLE_SAMPLE_LIMIT)
+yearly <- yearly_exceedance(season, SINGLE_SAMPLE_LIMIT)
+```
+
+## Data
+
+Results were downloaded from the Water Quality Portal for all Indiana E. coli
+samples collected between `r START_DATE` and `r END_DATE`. The cleaned dataset
+contains `r format(nrow(clean), big.mark = ",")` samples from
+`r format(n_distinct(clean$site_id), big.mark = ",")` monitoring sites.
+
+```{r cleaning-log}
+kable(log, col.names = c("Cleaning step", "Rows remaining"), format.args = list(big.mark = ","))
+```
+
+## Results
+
+### Which sites exceed the limit most often?
+
+```{r top-sites, fig.height=6}
+plot_top_sites(sites)
+```
+
+### Is there a seasonal pattern?
+
+```{r monthly, fig.height=5}
+plot_monthly_distribution(clean, SINGLE_SAMPLE_LIMIT)
+```
+
+### Has it changed over time?
+
+```{r yearly, fig.height=4}
+plot_yearly_exceedance(yearly)
+```
